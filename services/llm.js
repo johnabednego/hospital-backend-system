@@ -33,7 +33,7 @@ const processNote = async (noteContent) => {
         const result = await model.generateContent(prompt);
 
         // Debugging Logs
-        console.log("🔍 LLM Raw Response:", JSON.stringify(result, null, 2));
+        // console.log("🔍 LLM Raw Response:", JSON.stringify(result, null, 2));
 
         const responseText = result.response?.candidates?.[0]?.content?.parts?.[0]?.text || "";
         if (!responseText) {
@@ -46,7 +46,7 @@ const processNote = async (noteContent) => {
         const parsedResponse = JSON.parse(cleanJson);
 
         // Debugging: Log the extracted actionable steps
-        console.log("✅ Extracted Actionable Steps:", parsedResponse);
+        // console.log("✅ Extracted Actionable Steps:", parsedResponse);
 
         return {
             checklist: parsedResponse.checklist || [],
